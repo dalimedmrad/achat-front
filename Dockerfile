@@ -2,7 +2,7 @@
 FROM node:16.20.1 AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm install --force
 COPY . .
 RUN npm run build -- --output-path=./dist/out
 
