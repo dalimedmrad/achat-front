@@ -1,5 +1,5 @@
 # Stage 1: Build the Angular app
-FROM node:18.18.2 AS builder
+FROM node:14.21 AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install --force
