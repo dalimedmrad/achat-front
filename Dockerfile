@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install --force
 COPY . .
-RUN npm run build -- --output-path=./dist/out
+RUN npm run build -- --output-path=./dist/out && ls -la ./dist/out
 
 # Stage 2: Serve the Angular app using nginx
 FROM nginx:1.25.1-alpine as runtime
